@@ -1,0 +1,78 @@
+name: TitleFormatter
+description: >
+  Automatically cleans and formats scene titles. Can remove technical tags,
+  performer names, normalizes quotes/dashes, replace patterns and 
+  applies configurable casing (e.g. title case). All rules are opt-in.
+
+version: 1.0.0
+
+settings:
+  runAlways:
+    displayName: Run on all scenes (disable for only unorganized)
+    type: BOOLEAN
+
+  normalizeAllQuotes:
+    displayName: Normalize all fancy quotes to clean " and '
+    type: BOOLEAN
+
+  removeAllDoubleQuotes:
+    displayName: Remove all double quotes (any style)
+    type: BOOLEAN
+
+  trimWhitespace:
+    displayName: Trim whitespace at start and end
+    type: BOOLEAN
+
+  collapseWhitespace:
+    displayName: Collapse multiple spaces into one
+    type: BOOLEAN
+
+  removeEdgePunctuation:
+    displayName: Remove punctuation at start and end
+    type: BOOLEAN
+
+  removeSeasonEpisode:
+    displayName: Remove SxxEyy / Sx:Ey patterns
+    type: BOOLEAN
+
+  removePerformerNames:
+    displayName: >
+      Remove linked performer names (first and/or lastname) from title 
+      and also related binding words like "by", "from", "in" and much more.
+      Skip removing if this causes an empty title.
+    type: BOOLEAN
+
+  preserveCasePattern:
+    displayName: Regex for words to keep case unformatted
+    type: STRING
+
+  casingMode:
+    displayName: >
+      Casing mode. Use either of these (TITLECASE, SENTENCECASE, UPPERCASE, LOWERCASE,
+      CAMELCASE, KEBABCASE) or leave it empty for no change.
+    type: STRING
+
+  possessiveBaseTerms:
+    displayName: >
+      Possessive base terms (comma-separated, e.g. foobar)
+      to convert plural (foobars) into possessive (foobar's)
+    type: STRING
+
+  smartPossessive:
+    displayName: >
+      Smart possessive: skip possessive actions when more than one performer
+      is attached to avoid spelling errors
+    type: BOOLEAN
+
+  customReplacePairs:
+    displayName: >
+      Custom (regex) replace pairs as JSON, e.g. [["foo bar","foobar"],["foo-bar","foobar"]] or ["/foo[ -]bar/gi", "foobar"]
+    type: STRING
+
+ui:
+  requires:
+    - CommunityScriptsUILibrary
+  javascript:
+    - TitleFormatter.js
+  assets:
+    /: .
