@@ -1,6 +1,6 @@
 name: TitleFormatter
 description: Automatically cleans and formats scene titles. Can remove technical tags, performer names, normalizes quotes/dashes, replace patterns and applies configurable casing (e.g. title case). All rules are opt-in.
-version: 1.0.0
+version: 1.0.1
 # requires: CommunityScriptsUILibrary
 
 settings:
