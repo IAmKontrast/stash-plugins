@@ -268,8 +268,8 @@
 
     function removeEdgePunctuation(value) {
         let result = value;
-        result = result.replace(/^[\s\-–—:;,.!?'"…]+/, "");
-        result = result.replace(/[\s\-–—:;,.!?'"…]+$/, "");
+        result = result.replace(/^[\s\-–—:;~,.!?'"…]+/, "");
+        result = result.replace(/[\s\-–—:;~,.!?'"…]+$/, "");
         return result;
     }
 
